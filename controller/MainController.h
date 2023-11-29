@@ -9,24 +9,29 @@
 using namespace std;
 
 static string_view MAIN_OPTIONS[]{
-        "Exit program",
-        "Customer Relationship Management (CRM)",
-        "Sales",
-        "Human Resources"
+    "Exit program",
+    "Customer Relationship Management (CRM)",
+    "Sales",
+    "Human Resources"
 };
 
 class MainController {
-private:
-    const CRMController crmController;
-    const SalesController salesController;
-    const HRController hrController;
-    const TerminalView terminalView;
-public:
-    MainController(const CRMController& crmController, const SalesController& salesController, const HRController& hrController,
-                   const TerminalView& terminalView)
-    : crmController(crmController), salesController(salesController), hrController(hrController), terminalView(terminalView){};
+ private:
+  const CRMController crmController;
+  const SalesController salesController;
+  const HRController hrController;
+  const TerminalView terminalView;
+ public:
+  MainController(const CRMController &crmController,
+                 const SalesController &salesController,
+                 const HRController &hrController,
+                 const TerminalView &terminalView)
+      : crmController(crmController),
+        salesController(salesController),
+        hrController(hrController),
+        terminalView(terminalView) {};
 
-    void menu();
+  void menu();
 
-    bool invokeMenuItem(int selectedMenu);
+  bool invokeMenuItem(int selectedMenu);
 };

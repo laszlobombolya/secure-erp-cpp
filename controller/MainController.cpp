@@ -1,23 +1,22 @@
 #include "MainController.h"
 
 bool MainController::invokeMenuItem(int selectedMenu) {
-    switch (selectedMenu) {
-        case 0:
-            return false;
-        case 1:
-            crmController.displayMenu();
-            break;
-        case 2:
-            salesController.displayMenu();
-            break;
-        case 3:
-            hrController.displayMenu();
-            break;
-        default:
-            terminalView.printErrorMessage("Invalid menu item selected!\n");
-            break;
-    }
-    return true;
+  switch (selectedMenu) {
+    case 0:return false;
+    case 1:
+      crmController.displayMenu();
+      break;
+    case 2:
+      salesController.displayMenu();
+      break;
+    case 3:
+      hrController.displayMenu();
+      break;
+    default:
+      terminalView.printErrorMessage("Invalid menu item selected!\n");
+      break;
+  }
+  return true;
 }
 void MainController::menu() {
   bool isRunning = true;
