@@ -1,18 +1,18 @@
 #include "TerminalView.h"
 
-void TerminalView::printMessage(string_view message) {
+void TerminalView::printMessage(string_view message) const {
   throw exception();
 }
 
-void TerminalView::printMenu(string_view title, const string_view options[]) const {
+void TerminalView::printMenu(string_view title, const vector<string>& options) const {
   throw exception();
 }
 
-void TerminalView::printGeneralResults(string_view result, string_view label) {
+void TerminalView::printGeneralResults(string_view result, string_view label) const{
   throw exception();
 }
 
-void TerminalView::printTable(vector<vector<string_view>> table) {
+void TerminalView::printTable(const vector<vector<string>>& table) const {
   throw exception();
 }
 
@@ -20,7 +20,7 @@ int TerminalView::getNumberInput(string_view label) const {
   return 0;
 }
 
-vector<string_view> TerminalView::getInputs(vector<string_view> labels) {
+vector<string_view> TerminalView::getInputs(const vector<string>& labels) const{
   return vector<string_view>();
 }
 

@@ -1,13 +1,14 @@
 #pragma once
 #include <string_view>
+#include <string>
 #include <random>
 
 using namespace std;
 
 namespace {
-constexpr string_view lettersUppercase{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-constexpr string_view lettersLowercase = "abcdefghijklmnopqrstuvwxyz";
-constexpr string_view digits = "0123456789";
+const string lettersUppercase{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+const string lettersLowercase = "abcdefghijklmnopqrstuvwxyz";
+const string digits = "0123456789";
 }
 
 class Util {
@@ -27,7 +28,7 @@ class Util {
   }
 
   string randomChars(string_view chars, int amount) {
-    string randomChars{""};
+    string randomChars;
     for (int i = 0; i < amount; i++) {
       int randomIndex = getRandomInt(0, chars.length());
       randomChars.push_back(chars.at(randomIndex));
@@ -35,7 +36,7 @@ class Util {
     return randomChars;
   }
 
-  string_view shuffle(string_view original) {
+  string shuffle(string_view original) {
     char *chars = new char[original.length() + 1];
     strcpy(chars, string(original).c_str());
     for (int i = 0; i < original.length() - 1; i++) {
@@ -47,7 +48,7 @@ class Util {
     return {chars};
   }
 
-  string_view generateId() {
+  string generateId() {
     int smallLettersAmount = 4;
     int capitalLettersAmount = 2;
     int digitsAmount = 2;
@@ -59,10 +60,10 @@ class Util {
     return shuffle(pool);
   }
 
-  string_view generateUniqueId(vector<string_view> ids) {
+  string generateUniqueId(const vector<string>& ids) {
     while (true) {
       bool foundIdentical = false;
-      string_view newId = generateId();
+      string newId = generateId();
       for (string_view id : ids) {
         if (std::equal(newId.begin(), newId.end(),id.begin(), id.end())) {
           foundIdentical = true;

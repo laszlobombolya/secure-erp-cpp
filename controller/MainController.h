@@ -1,17 +1,9 @@
 #pragma once
 #include <vector>
-#include <string_view>
 #include "CRMController.h"
 #include "../ui/TerminalView.h"
 
 using namespace std;
-
-static string_view MAIN_OPTIONS[]{
-    "Exit program",
-    "Customer Relationship Management (CRM)",
-    "Sales",
-    "Human Resources"
-};
 
 class MainController {
  private:

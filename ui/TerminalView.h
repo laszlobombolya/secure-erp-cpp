@@ -12,7 +12,7 @@ class TerminalView {
    *
    * @param message information to be printed
    */
-  void printMessage(string_view message);
+  void printMessage(string_view message) const;
 
   /**
    * Prints options in standard menu format like this:
@@ -25,7 +25,7 @@ class TerminalView {
    * @param title   the title of the menu (first row)
    * @param options array of all available options in menu as Strings
    */
-  void printMenu(string_view title, const string_view options[]) const;
+  void printMenu(string_view title, const vector<string>& options) const;
 
   /**
    * Prints out any type of non-tabular data
@@ -33,7 +33,7 @@ class TerminalView {
    * @param result String with result to be printed
    * @param label  label String
    */
-  void printGeneralResults(string_view result, string_view label);
+  void printGeneralResults(string_view result, string_view label) const;
 
   /*
    /--------------------------------\
@@ -50,7 +50,7 @@ class TerminalView {
    *
    * @param table 2 dimensional array to be printed as table
    */
-  void printTable(vector<vector<string_view>> table);
+  void printTable(const vector<vector<string>>& table) const;
 
   /**
    * Gets single number input from the user
@@ -66,7 +66,7 @@ class TerminalView {
    * @param labels array of Strings with the labels to be displayed before each prompt
    * @return array of user inputs
    */
-  vector<string_view> getInputs(vector<string_view> labels);
+  vector<string_view> getInputs(const vector<string>& labels) const;
 
   /**
    * Prints out error messages to terminal

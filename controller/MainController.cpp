@@ -1,5 +1,12 @@
 #include "MainController.h"
 
+const static vector<string> MAIN_OPTIONS{
+    "Exit program",
+    "Customer Relationship Management (CRM)",
+    "Sales",
+    "Human Resources"
+};
+
 bool MainController::invokeMenuItem(int selectedMenu) {
   switch (selectedMenu) {
     case 0:return false;
@@ -7,10 +14,10 @@ bool MainController::invokeMenuItem(int selectedMenu) {
       crmController.displayMenu();
       break;
     case 2:
-      salesController.displayMenu();
+//      salesController.displayMenu();
       break;
     case 3:
-      hrController.displayMenu();
+//      hrController.displayMenu();
       break;
     default:
       terminalView.printErrorMessage("Invalid menu item selected!\n");
